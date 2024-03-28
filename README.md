@@ -54,8 +54,9 @@ Before using this project, make sure you have the following:
    comments_data_to_csv('TikTok_Data/comments_data/')
    video_data_to_csv('TikTok_Data/video_data/')
    ```
+6. The fetched video and comments metadata will be saved as json files in the `TikTok_Data/video_data/` and `TikTok_Data/comments_data/` directories, respectively.
 
-6. The fetched video metadata and comments data will be saved as CSV files in the `TikTok_Data/video_data/` and `TikTok_Data/comments_data/` directories, respectively.
+7. You can convert the fetched data to CSV format using the helper functions `comments_data_to_csv` and `video_data_to_csv`.
 
 ## Functions
 
@@ -66,7 +67,10 @@ This function fetches video metadata for a given TikTok account within a specifi
 - `account`: The TikTok account username or user ID.
 - `start_date`: The start date of the timeframe in the format "YYYYMMDD".
 - `end_date`: The end date of the timeframe in the format "YYYYMMDD".
-- `mode`: The mode of the `account` parameter. It can be either "username" (default) or "user_id".
+- `mode`: The mode of the `account` parameter. It can be either "username" (default) or "hashtag_name", depending on whether you want to collect data for a specific account or hashtag.
+- `filter_hashtags`: A list of hashtags to filter the fetched videos by (only when `mode` is "username"). The default is an empty list.
+- `return_data`: A boolean value indicating whether to return the fetched data as a dictionary. The default is `False`.
+
 
 ### `fetch_tiktok_comments_data(video_id)`
 
