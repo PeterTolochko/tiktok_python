@@ -54,7 +54,7 @@ Before using this project, make sure you have the following:
    comments_data_to_csv('TikTok_Data/comments_data/')
    video_data_to_csv('TikTok_Data/video_data/')
    ```
-6. The fetched video and comments metadata will be saved as json files in the `TikTok_Data/video_data/` and `TikTok_Data/comments_data/` directories, respectively.
+6. The fetched video and comments metadata will be saved as JSON files in the `TikTok_Data/video_data/` and `TikTok_Data/comments_data/` directories, respectively.
 
 7. You can convert the fetched data to CSV format using the helper functions `comments_data_to_csv` and `video_data_to_csv`.
 
@@ -77,10 +77,11 @@ This function fetches video metadata for a given TikTok account within a specifi
 This function fetches comments data for a given TikTok video ID.
 
 - `video_id`: The ID of the TikTok video.
+- `return_data`: A boolean value indicating whether to return the fetched data as a dictionary. The default is `False`.
 
 ### Helper Functions
 
-- `get_video_ids(directory)`: Retrieves the video IDs from the fetched video data in the specified directory.
+- `get_video_ids(directory)`: Retrieves the video IDs from the fetched JSON files in the specified directory.
 - `comments_data_to_csv(directory)`: Converts the fetched comments data to CSV format and saves it in the specified directory.
 - `video_data_to_csv(directory)`: Converts the fetched video metadata to CSV format and saves it in the specified directory.
 
