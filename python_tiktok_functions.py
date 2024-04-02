@@ -201,14 +201,20 @@ def fetch_tiktok_comments_data(video_id,  return_data=False):
         data["search_id"] = search_id
 
         response = requests.post(API_URL, headers=headers, json=data, allow_redirects=True)
-        response_data = response.json()
+        try:
+            response_data = response.json()
 
-        if response_data["data"]["comments"]:
-            all_comments_data.append(response_data["data"])
-            has_more = response_data["data"].get("has_more", False)
-            cursor = response_data["data"].get("cursor", 0)
-            search_id = response_data["data"].get("search_id", '')
-        else:
+            if response_data["data"]["comments"]:
+                all_comments_data.append(response_data["data"])
+                has_more = response_data["data"].get("has_more", False)
+                cursor = response_data["data"].get("cursor", 0)
+                search_id = response_data["data"].get("search_id", '')
+            else:
+                break
+        except Exception as e:
+            print(f"Error fetching comments for {video_id}: {e}")
+            print(f"Status Code: {response.status_code}")
+            print(f"Response: {response.text}")
             break
 
     if not all_comments_data:
