@@ -142,9 +142,14 @@ def fetch_tiktok_video_data(entities, start_date, end_date, mode="username", fil
                 print(f"Got {n_videos} videos")
                 break
 
-        except Exception as error:
-            print(f"Error occurred: {error}")
-            print(response.text)
+        except Exception as e:
+            print(f"Error fetching comments for {entities}: {e}")
+            print(f"Status Code: {response.status_code}")
+            print(f"Response: {response.text}")
+
+            # log the entities that caused the error
+            with open('TikTok_Data/error_log_entities.txt', 'a') as f:
+                f.write(f"{entities}\n")
             break
 
     if not all_video_data:
@@ -215,6 +220,9 @@ def fetch_tiktok_comments_data(video_id,  return_data=False):
             print(f"Error fetching comments for {video_id}: {e}")
             print(f"Status Code: {response.status_code}")
             print(f"Response: {response.text}")
+                        # log the entities that caused the error
+            with open('TikTok_Data/error_log_comments.txt', 'a') as f:
+                f.write(f"{video_id}")
             break
 
     if not all_comments_data:
