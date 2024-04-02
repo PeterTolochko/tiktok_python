@@ -263,6 +263,27 @@ def get_video_ids(video_data_file):
             video_ids.extend([video['id'] for video in data])
     return video_ids
 
+# get twitter users from the video data
+def get_users(data_path):
+    """
+    Retrieves usernames from JSON files in the specified directory.
+    Args:
+        video_data_file (str): Path to the directory containing JSON files with video data.
+    Returns:
+        list: A list of usernames extracted from the JSON files.
+    """
+    users = []
+    for file in os.listdir(data_path):
+        # remove .DS_Store file
+        if file == ".DS_Store":
+            continue
+        with open(f"{data_path}/{file}", "r") as f:
+            data = json.load(f)
+            for video in data:
+                users.append(video["username"])
+    return list(users)
+
+
 
 def video_data_to_csv(video_data_path):
     """
