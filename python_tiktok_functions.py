@@ -31,7 +31,7 @@ def generate_access_token(key, secret):
         return None
 
 
-def fetch_tiktok_video_data(entities, start_date, end_date, mode="username", filter_hashtags=[], return_data=False):
+def fetch_tiktok_video_data(entities, start_date, end_date, mode="username", filter_hashtags=[], return_data=False, n_videos=None):
     """
     Fetches video data from the TikTok API based on the provided parameters.
 
@@ -117,6 +117,8 @@ def fetch_tiktok_video_data(entities, start_date, end_date, mode="username", fil
     cursor = 0
     search_id = ''
 
+    videos_count = 0
+
     while has_more:
         data["cursor"] = cursor
         data["search_id"] = search_id
@@ -131,8 +133,15 @@ def fetch_tiktok_video_data(entities, start_date, end_date, mode="username", fil
                 cursor = response_data["data"].get("cursor", 0)
                 search_id = response_data["data"].get("search_id", '')
                 print(f"Getting {len(response_data['data']['videos'])} videos")
+                videos_count += len(response_data['data']['videos'])
+                print(f"Total videos so far: {videos_count}")
             else:
                 has_more = False
+
+            if n_videos and videos_count >= n_videos:
+                print(f"Got {n_videos} videos")
+                break
+
         except Exception as error:
             print(f"Error occurred: {error}")
             print(response.text)
@@ -231,6 +240,9 @@ def get_video_ids(video_data_file):
     """
     video_ids = []
     for file in os.listdir(video_data_file):
+        # remove .DS_Store file 
+        if file == '.DS_Store':
+            continue
         file_path = os.path.join(video_data_file, file)
         with open(file_path, 'r') as f:
             data = json.load(f)
@@ -248,6 +260,9 @@ def video_data_to_csv(video_data_path):
     """
     video_data_list = []
     for file in os.listdir(video_data_path):
+        # remove .DS_Store file
+        if file == '.DS_Store':
+            continue
         file_path = os.path.join(video_data_path, file)
         account_name = os.path.splitext(os.path.basename(file))[0].split("_")[0]
         current_data = pd.read_json(file_path)
@@ -268,6 +283,9 @@ def comments_data_to_csv(comments_data_path):
     """
     comments_data_list = []
     for file in os.listdir(comments_data_path):
+        # remove .DS_Store file
+        if file == '.DS_Store':
+            continue
         file_path = os.path.join(comments_data_path, file)
         current_data = pd.read_json(file_path)
         comments_data_list.append(current_data)

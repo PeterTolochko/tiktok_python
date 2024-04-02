@@ -70,6 +70,7 @@ This function fetches video metadata for a given TikTok account within a specifi
 - `mode`: The mode of the `account` parameter. It can be either "username" (default) or "hashtag_name", depending on whether you want to collect data for a specific account or hashtag.
 - `filter_hashtags`: A list of hashtags to filter the fetched videos by (only when `mode` is "username"). The default is an empty list.
 - `return_data`: A boolean value indicating whether to return the fetched data as a dictionary. The default is `False`.
+- `n_videos`: The number of videos to fetch. The default is `None`, which does not introduce any restrictions on the count.
 
 
 ### `fetch_tiktok_comments_data(video_id)`
