@@ -39,20 +39,20 @@ Before using this project, make sure you have the following:
 
     access_token = generate_access_token(key, secret)["access_token"]
 
-   # create start and end dates for each month in 2023
-   timeframe = [("20230101", "20230131"), ("20230201", "20230228")]
-   accounts = ['nasa_0fficial', 'nytimes']
+    # create start and end dates for each month in 2023
+    timeframe = [("20230101", "20230131"), ("20230201", "20230228")]
+    accounts = ['nasa_0fficial', 'nytimes']
 
-   for account in accounts:
-       for start_date, end_date in timeframe:
-           fetch_tiktok_video_data(account, start_date, end_date, mode="username")
+    for account in accounts:
+        for start_date, end_date in timeframe:
+            fetch_tiktok_video_data(account, start_date, end_date, mode="username")
 
-   video_ids = get_video_ids('TikTok_Data/video_data')
-   for video_id in video_ids:
-       fetch_tiktok_comments_data(video_id)
+    video_ids = get_video_ids('TikTok_Data/video_data')
+    for video_id in video_ids:
+        fetch_tiktok_comments_data(video_id)
 
-   comments_data_to_csv('TikTok_Data/comments_data/')
-   video_data_to_csv('TikTok_Data/video_data/')
+    comments_data_to_csv('TikTok_Data/comments_data/')
+    video_data_to_csv('TikTok_Data/video_data/')
    ```
 6. The fetched video and comments metadata will be saved as JSON files in the `TikTok_Data/video_data/` and `TikTok_Data/comments_data/` directories, respectively.
 
