@@ -222,7 +222,7 @@ def fetch_tiktok_comments_data(video_id,  return_data=False):
             print(f"Response: {response.text}")
                         # log the entities that caused the error
             with open('TikTok_Data/error_log_comments.txt', 'a') as f:
-                f.write(f"{video_id}")
+                f.write(f"{video_id}\n")
             break
 
     if not all_comments_data:
