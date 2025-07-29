@@ -2,7 +2,7 @@
 name = "tiktok-api-client"
 version = "0.1.0"
 description = "A client for fetching TikTok video and comment data via the TikTok Research API"
-authors = [{ name="Your Name", email="you@example.com" }]
+authors = [{ name="Petro Tolochko", email="ptolochko@hotmail.com" }]
 license = "MIT"
 readme = "README.md"
 requires-python = ">=3.8"
