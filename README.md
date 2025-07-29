@@ -174,12 +174,13 @@ If you find this project useful, please cite:
 
 BibTeX:
 ```bibtex
-@misc{tiktokapiclient,
+@software{tiktokapiclient,
   author       = {Petro Tolochko},
   title        = {TikTok API Client: A Python package for fetching TikTok video and comment metadata},
-  year         = {2024},
+  year         = {2025},
+  version      = {0.1.0},
   howpublished = {\url{https://github.com/PeterTolochko/tiktok_python}},
-  note         = {Version 0.1.0}
+  doi          = {10.5281/zenodo.16566437}
 }
 ```
 
