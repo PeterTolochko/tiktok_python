@@ -170,6 +170,9 @@ Contributions are welcome! Please feel free to submit a pull request.
 
 If you find this project useful, please cite:
 
+Tolochko, P. (2025). *TikTok API Client: A Python package for fetching TikTok video and comment metadata* (Version 0.1.0) [Computer software]. https://doi.org/10.5281/zenodo.16566437
+
+
 [![DOI](https://zenodo.org/badge/778851757.svg)](https://doi.org/10.5281/zenodo.16566436)
 
 
