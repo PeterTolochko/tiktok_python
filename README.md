@@ -144,7 +144,7 @@ Converts video metadata JSON files to a single CSV.
 |----------------|---------------------------------------------|
 | `directory`     | Path to folder with video JSON files       |
 | `output_file`   | Optional path to save CSV (default auto)   |
-| **Effect**      | Saves concatenated CSV to `output_file`     |
+| **Effect**      | Saves concatenated CSV to `output_file`    |
 
 ---
 
@@ -156,8 +156,32 @@ Converts comment JSON files to a single CSV.
 |----------------|---------------------------------------------|
 | `directory`     | Path to folder with comment JSON files     |
 | `output_file`   | Optional path to save CSV (default auto)   |
-| **Effect**      | Saves concatenated CSV to `output_file`     |
+| **Effect**      | Saves concatenated CSV to `output_file`    |
 
+
+
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a pull request.
+
+
+## Citation
+
+If you find this project useful, please cite:
+
+> **Petro Tolochko** (2024). *TikTok API Client: A Python package for fetching TikTok video and comment metadata*. GitHub. https://github.com/PeterTolochko/tiktok_python
+
+BibTeX:
+```bibtex
+@misc{tiktokapiclient,
+  author       = {Petro Tolochko},
+  title        = {TikTok API Client: A Python package for fetching TikTok video and comment metadata},
+  year         = {2024},
+  howpublished = {\url{https://github.com/PeterTolochko/tiktok_python}},
+  note         = {Version 0.1.0}
+}
+```
 
 
 ## License
