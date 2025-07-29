@@ -186,4 +186,4 @@ BibTeX:
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE).
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
