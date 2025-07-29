@@ -170,7 +170,8 @@ Contributions are welcome! Please feel free to submit a pull request.
 
 If you find this project useful, please cite:
 
-> **Petro Tolochko** (2024). *TikTok API Client: A Python package for fetching TikTok video and comment metadata*. GitHub. https://github.com/PeterTolochko/tiktok_python
+[![DOI](https://zenodo.org/badge/778851757.svg)](https://doi.org/10.5281/zenodo.16566436)
+
 
 BibTeX:
 ```bibtex
