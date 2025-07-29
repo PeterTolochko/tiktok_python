@@ -1,0 +1,16 @@
+[project]
+name = "tiktok-api-client"
+version = "0.1.0"
+description = "A client for fetching TikTok video and comment data via the TikTok Research API"
+authors = [{ name="Your Name", email="you@example.com" }]
+license = "MIT"
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "requests",
+    "pandas"
+]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
