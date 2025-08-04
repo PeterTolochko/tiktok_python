@@ -123,6 +123,7 @@ class TikTokAPIClient:
                          end_date: str,
                          mode: str = "username",
                          filter_hashtags: List[str] = [],
+                         regions: List[str] = None,
                          output_dir: str = "TikTok_Data/video_data",
                          return_data: bool = False,
                          n_videos: int = None):
@@ -150,8 +151,14 @@ class TikTokAPIClient:
             query["query"]["and"].append({
                 "operation": "IN", "field_name": "hashtag_name", "field_values": entities
             })
+
         else:
             raise ValueError(f"Invalid mode: {mode}")
+        
+        if regions:
+            query["query"]["and"].append({
+                "operation": "IN", "field_name": "region_code", "field_values": regions
+            })
 
         safe_name = str(entities).replace("/", "_").replace(" ", "_")
         filename = f"{safe_name}_{start_date}_{end_date}_videos.json"
