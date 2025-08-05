@@ -49,7 +49,7 @@ class TikTokAPIClient:
         if not self.access_token or datetime.now() >= self.token_expiry:
             self._refresh_token()
 
-    def _request_with_retries(self, url, headers, json_data, retries=3):
+    def _request_with_retries(self, url, headers, json_data, retries=10):
         for attempt in range(retries):
             try:
                 response = requests.post(url, headers=headers, json=json_data)

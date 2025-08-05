@@ -93,6 +93,7 @@ Fetch video metadata for a user or hashtag.
 | `end_date`       | End date in `"YYYYMMDD"` format                           |
 | `mode`           | `"username"` (default) or `"hashtag_name"`                |
 | `filter_hashtags`| List of hashtags to filter (optional)                     |
+| `regions`        | List of regions to filter (optional)                      |
 | `return_data`    | If `True`, return list of dicts                           |
 | `n_videos`       | Max number of videos to fetch                             |
 
